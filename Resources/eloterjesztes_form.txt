@@ -1,0 +1,45 @@
+\documentclass{report}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{Alegreya}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{needspace}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{tabularx}
+\graphicspath{ {./eloterjesztes_res} }
+
+\pagestyle{fancy}
+\chead{\includegraphics[height=15mm]{bme_logo_nagy}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{25pt}
+\onehalfspacing
+
+\fancyfoot[C]{
+    \footnotesize
+    \color[rgb]{0.5,0.5,0.5}
+    \begin{tabularx}{\textwidth} { 
+        >{\raggedleft\arraybackslash}X 
+        >{\centering\arraybackslash}c 
+        >{\raggedright\arraybackslash}X }
+        Budapesti Mûszaki és Gazdaságtudományi Egyetem & \multicolumn{1}{c}{\multirow{3}{*}{\includegraphics[width=8mm]{hklogo}}} & 1117 Budapest, Irinyi József utca 42. 104 \\
+        Villamosmérnöki és Informatikai Kar            &                                                            & http://vik-hk.bme.hu - hk@vik-hk.bme.hu   \\
+        Hallgatói Képviselet                           &                                                            & Tel.: 06-1-463-3657                      
+        \end{tabularx}
+}
+\begin{document}
+\begin{center}
+
+\color[rgb]{0.098,0.298,0.627}
+
+\Large\textsc{Elõterjesztés}
+
+\color{black}
+\large{A Villamosmérnöki és Informatikai Kar Hallgatói Képviseletének ULESDATUM napon tartott ULESTIPUS}
+\end{center}
+$CONTENTSPACE$
+\end{document}

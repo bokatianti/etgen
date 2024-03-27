@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "etgen": {
+      "commandName": "Project",
+      "commandLineArgs": "build D:\\Pályázat\\VIKÖ\\et_new.ets"
+    }
+  }
+}
