@@ -1,5 +1,7 @@
 ﻿
+using etgen.Properties;
 using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.CompilerServices;
@@ -59,6 +61,34 @@ namespace etgen
                 }
 
             }
+            else if(args.Length == 1 && args[0].Contains(".ets"))
+            {
+                try
+                {
+                    args[0] = args[0].Replace("\"", "");
+                    string directoryPath = Path.GetDirectoryName(args[0]);
+                    string filePath = directoryPath + "\\build.bat";
+                    Program pr = new Program();
+                    string out2delete = pr.loadEts(args[0]);
+                    pr.Write("ETS_SOURCE");
+                    StreamWriter batch =  new StreamWriter(filePath);
+                    batch.WriteLine("cd /" + filePath[0] + " \"%~dp0\"");
+                    batch.WriteLine("latexmk -pdf");
+                    batch.WriteLine("latexmk -c");
+                    batch.Close();
+                    var process = Process.Start(filePath);
+                    process.WaitForExit();
+                    File.Delete(filePath);
+                    if (Directory.Exists(directoryPath + "\\eloterjesztes_res"))
+                        Directory.Delete(directoryPath + "\\eloterjesztes_res", true);
+                    File.Delete(out2delete);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    Console.ReadLine();
+                }
+            }    
             else
             {
                 Console.WriteLine("Incorrect arguments, press any key to exit");
@@ -79,11 +109,11 @@ namespace etgen
             stream.CopyTo(fileStream);
             fileStream.Close();
         }
-        void loadEts(string filename) 
+        string loadEts(string filename) 
         {
             if (File.Exists(filename))
             {
-                bool iscontent = false, ismacros = false;
+                bool iscontent = false, ismacros = false, isjav = false, ismell = false;
                 foreach(var line  in File.ReadAllLines(filename)) 
                 {                    
                     if (line.Length > 3)
@@ -135,6 +165,7 @@ namespace etgen
                         ismacros = true;              
                 }
             }
+            return outputfile;
         }
         string rMacro(string line)
         {

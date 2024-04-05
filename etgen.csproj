@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ApplicationIcon>etgenLogo.ico</ApplicationIcon>
+    <AssemblyName>DokuScript Előterjesztés Generátor</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

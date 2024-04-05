@@ -84,13 +84,13 @@ namespace etgen.Properties {
         ///\usepackage{setspace}
         ///\usepackage{longtable}
         ///\usepackage{tabularx}
-        ///\graphicspath{ {../eloterjesztes_res} }
+        ///\graphicspath{ {./eloterjesztes_res} }
         ///
         ///\pagestyle{fancy}
         ///\chead{\includegraphics[height=15mm]{bme_logo_nagy}}
         ///\renewcommand{\headrulewidth}{0pt}
         ///\setlength{\headheight}{25pt}
-        /// [rest of string was truncated]&quot;;.
+        ///\ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string eloterjesztes_form {
             get {

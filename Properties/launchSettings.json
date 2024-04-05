@@ -2,7 +2,7 @@
   "profiles": {
     "etgen": {
       "commandName": "Project",
-      "commandLineArgs": "build D:\\Pályázat\\VIKÖ\\et_new.ets"
+      "commandLineArgs": "D:\\Pályázat\\SPORT\\et_new.ets"
     }
   }
 }
