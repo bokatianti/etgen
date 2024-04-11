@@ -72,7 +72,7 @@ namespace etgen
                     string out2delete = pr.loadEts(args[0]);
                     pr.Write("ETS_SOURCE");
                     StreamWriter batch =  new StreamWriter(filePath);
-                    batch.WriteLine("cd /" + filePath[0] + " \"%~dp0\"");
+                    batch.WriteLine("cd /D " + directoryPath);
                     batch.WriteLine("latexmk -pdf");
                     batch.WriteLine("latexmk -c");
                     batch.Close();
